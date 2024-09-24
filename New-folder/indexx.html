@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solve Question</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    <header class="w-full h-24 bg-pink-600 rounded-b-xl"></header>
+    <main class="container mx-auto sm:px-2">
+        <div class="md:w-full w-[90%] md:pt-6 pt-4 md:p-0 p-3 mx-auto">
+            <h1 class="mb-4 text-2xl font-bold text-center text-lime-400">Click a Single Question And Unhide the Ans.
+            </h1>
+            <div class="flex justify-between mb-4 ">
+                <button id="showAll" class="btn bg-pink-600 md:px-5 px-2  md:text-xl">Show All</button>
+                <h1 id="h1T" class="md:text-2xl text-xl mb-4 font-bold">
+                    Question:
+                </h1>
+                <button id="reset" class="btn bg-pink-600 md:px-5 px-2  md:text-xl">Hide All</button>
+            </div>
+            <h2 id="h2T" class="text-xl">
+                1. What is the Document Object Model (DOM)?
+            </h2>
+            <p id="P2P" class="hidden bg-pink-600 md:p-3 md:my-4 my-2 p-2 rounded-b-xl rounded-t text-white">The
+                Document Object Model (DOM) is a programming interface for web documents. It represents the structure of
+                an HTML or XML document as a tree of objects, allowing scripts like JavaScript to access, manipulate,
+                and
+                update the content, structure, and style of a webpage dynamically.</p>
+            <h2 id="h3T" class="text-xl">
+                2. How do you select an element from the DOM?
+            </h2>
+            <p id="P3P" class="hidden bg-pink-600 md:my-4 my-2 md:p-3 p-2 rounded-b-xl rounded-t text-white">
+                document.getElementById('id') selects an element by its ID.
+                document.querySelector('selector') selects the first element that matches a CSS selector.
+                document.getElementsByClassName('class') selects elements by class name.</p>
+            <h2 id="h4T" class="text-xl">
+                3. What is event delegation in the context of the DOM, and why is it useful?
+            </h2>
+            <p id="P4P"
+                class="hidden bg-pink-600 md:my-4 my-2 md:p-3 p-2 md:my-4 my-2 rounded-b-xl rounded-t text-white">Event
+                delegation is a technique in the DOM where you attach a single event listener to a parent element to
+                manage events triggered by its child elements. This is useful because it improves performance by
+                reducing
+                the number of event listeners and handles dynamic elements added to the DOM after the listener is set.
+            </p>
+            <h2 id="h5T" class="text-xl">
+                4. How do you manipulate an element's attributes and styles using the DOM?
+            </h2>
+            <p id="P5P" class="hidden bg-pink-600 md:p-3 p-2 rounded-b-xl rounded-t text-white md:my-4 my-2">
+                Attributes: Use element.setAttribute('attr', 'value') to set
+                an attribute, and element.getAttribute('attr') to get it.
+                Styles: Use element.style.property = 'value' to modify inline styles, or add/remove CSS classes with
+                element.classList.add('class') and element.classList.remove('class').
+            </p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('h2T').addEventListener('click', function () {
+            // if (document.getElementById('P2P').classList.contains('hidden') === true) {
+            //     document.getElementById('P2P').classList.remove('hidden');
+            // }
+            // else if(document.getElementById('P2P').classList.contains('hidden') === false){
+            //     document.getElementById('P2P').classList.add('hidden');
+            // }
+            hideAndShow('P2P');
+        });
+        document.getElementById('h3T').addEventListener('click', function () {
+            hideAndShow('P3P');
+        })
+        document.getElementById('h4T').addEventListener('click', function () {
+            hideAndShow('P4P');
+        })
+        document.getElementById('h5T').addEventListener('click', function () {
+            hideAndShow('P5P');
+        })
+        document.getElementById('showAll').addEventListener('click', function () {
+            document.getElementById('P5P').classList.remove('hidden');
+            document.getElementById('P4P').classList.remove('hidden');
+            document.getElementById('P3P').classList.remove('hidden');
+            document.getElementById('P2P').classList.remove('hidden');
+        })
+        document.getElementById('reset').addEventListener('click', function () {
+            document.getElementById('P5P').classList.add('hidden');
+            document.getElementById('P4P').classList.add('hidden');
+            document.getElementById('P3P').classList.add('hidden');
+            document.getElementById('P2P').classList.add('hidden');
+        })
+        function hideAndShow(id){
+            if (document.getElementById(id).classList.contains('hidden') === true) {
+                document.getElementById(id).classList.remove('hidden');
+            }
+            else if(document.getElementById(id).classList.contains('hidden') === false){
+                document.getElementById(id).classList.add('hidden');
+            };
+        };
+    </script>
+</body>
+
+</html>
