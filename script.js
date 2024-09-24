@@ -171,8 +171,11 @@ function hideAndShow(id){
 function hideAndShowzx(id){
     if (document.getElementById(id).classList.contains('bg-white') === true) {
         document.getElementById(id).classList.remove('bg-white');
+        document.getElementById(id).classList.add('bg-pink-50');
     }
-    else if(document.getElementById(id).classList.contains('bg-white') === false){
+    else if(document.getElementById(id).classList.contains('bg-pink-50') === true){
+        
+        document.getElementById(id).classList.remove('bg-pink-50');
         document.getElementById(id).classList.add('bg-white');
     };
 };
